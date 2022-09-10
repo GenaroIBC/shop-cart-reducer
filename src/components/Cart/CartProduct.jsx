@@ -1,9 +1,8 @@
-export function CartProduct({ title, price, id }) {
-  console.log([title, price, id]);
-
+export function CartProduct({ title, price, id, amount }) {
   return (
     <article className="cart__product">
-      {title} - {price} - {id}
+      {title} - {price} - {id} |{" "}
+      <span className="cart__product__amount">{amount}</span>
     </article>
   );
 }
