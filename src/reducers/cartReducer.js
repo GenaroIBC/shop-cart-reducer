@@ -59,7 +59,7 @@ export const cartReducer = (state, { type, payload }) => {
         ],
       };
     case CART_TYPES.CLEAR_CART:
-      return {};
+      return { ...state, cart: [] };
     default:
       break;
   }

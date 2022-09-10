@@ -12,10 +12,14 @@ function App() {
     cartDispatch({ type: CART_TYPES.ADD_TO_CART, payload: id });
   };
 
+  const clearCart = () => {
+    cartDispatch({ type: CART_TYPES.CLEAR_CART });
+  };
+
   return (
     <>
       <ProductsList addToCart={addToCart} products={cartState.products} />
-      <Cart products={cartState.cart} />
+      <Cart clearCart={clearCart} products={cartState.cart} />
     </>
   );
 }
