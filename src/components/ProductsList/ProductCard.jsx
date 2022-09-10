@@ -5,7 +5,6 @@ export function ProductCard({ data, addToCart }) {
       <h2>{title}</h2>
       <h3>{price}</h3>
       <h4>{id}</h4>
-      {/* <button onClick={console.log}></button> */}
       <button onClick={() => addToCart(id)}>Add</button>
     </article>
   );
