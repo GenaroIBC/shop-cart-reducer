@@ -1,9 +1,9 @@
 import { useReducer } from "react";
 import { cartReducer, INITIAL_CART } from "./reducers/cartReducer";
 import "./App.css";
-import { ProductCard } from "./components/ProductCard";
 import { CART_TYPES } from "./actions/cartActions";
-import { Cart } from "./components/Cart";
+import { Cart } from "./components/Cart/Cart";
+import { ProductsList } from "./components/ProductsList/ProductsList";
 
 function App() {
   const [cartState, cartDispatch] = useReducer(cartReducer, INITIAL_CART);
@@ -14,11 +14,7 @@ function App() {
 
   return (
     <>
-      <div className="products-container">
-        {cartState.products.map(product => (
-          <ProductCard addToCart={addToCart} key={product.id} data={product} />
-        ))}
-      </div>
+      <ProductsList addToCart={addToCart} products={cartState.products} />
       <Cart products={cartState.cart} />
     </>
   );
