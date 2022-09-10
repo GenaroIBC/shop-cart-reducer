@@ -28,16 +28,18 @@ export const INITIAL_CART = {
       price: 20,
     },
   ],
+  cart: [],
 };
 
 export const cartReducer = (state, { type, payload }) => {
   switch (type) {
     case CART_TYPES.ADD_TO_CART:
-      break;
-
+      return {
+        ...state,
+        cart: [...state.cart, state.products.find(item => item.id === payload)],
+      };
     case CART_TYPES.CLEAR_CART:
-      break;
-
+      return {};
     default:
       break;
   }
